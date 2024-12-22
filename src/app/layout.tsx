@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../app/styles/globals.css";
 import { Kanit } from "next/font/google";
+import CustomCursor from "./_components/CustomCursor";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${kanit.variable} antialiased`}>{children}</body>
+      <body className={`${kanit.variable} antialiased`}>
+        <CustomCursor/>
+        {children}
+        </body>
     </html>
   );
 }

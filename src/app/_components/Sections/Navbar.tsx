@@ -81,7 +81,7 @@ export default function Navbar() {
         <Image src={logo} width={135} height={100} alt="logo" />
       </div>
 
-      {/* Navigation Links for Desktop */}
+      {/* Desktop Navigation Links */}
       <div className="hidden lg:flex w-full justify-center">
         <ul className="flex gap-24 text-gray-800">
           {navLinks.map((link, index) => (
@@ -122,15 +122,17 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-      <div className="flex gap-10 items-center">
-          <SearchIcon className="w-7 hidden md:block" />
-          <BarIcon className="w-5 hidden md:block" />
+
+      {/* Desktop Icons (Search and Bar) */}
+      <div className="flex gap-10 items-center hidden lg:flex">
+        <SearchIcon className="w-7" />
+        <BarIcon className="w-5" />
       </div>
 
       {/* Mobile Menu Toggle */}
       <div className="flex items-center gap-5 lg:hidden">
         <SearchIcon className="w-7" />
-
+        
         {/* Bar Icon or X based on the menu state */}
         <div onClick={toggleMenu}>
           {isMenuOpen ? (
