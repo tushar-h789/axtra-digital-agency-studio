@@ -1,7 +1,9 @@
+import Navbar from "./_components/Sections/Navbar";
+
 export default function HomePage() {
   return (
     <div>
-      <p>HomePage</p>
+      <Navbar/>
     </div>
   );
 }
