@@ -76,7 +76,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="mx-4 lg:mx-10 flex justify-between items-center py-6 border-b-2">
+    <div className="mx-4 lg:mx-10 flex justify-between items-center py-6">
       <div className="flex-shrink-0">
         <Image src={logo} width={135} height={100} alt="logo" />
       </div>
