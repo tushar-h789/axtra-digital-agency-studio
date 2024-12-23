@@ -42,7 +42,7 @@ export default function BrandsSection() {
           setIsInView(true);
         }
       },
-      { threshold: 0.3 } // Trigger when 30% of the section is in view
+      { threshold: 0.5 } // Trigger when 30% of the section is in view
     );
 
     if (sectionRef.current) {
@@ -57,7 +57,7 @@ export default function BrandsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="container my-36 text-center">
+    <section ref={sectionRef} className="container my-20 lg:my-36 text-center">
       {/* Heading Animation */}
       <motion.h2
         className="uppercase text-xl text-slate-700 mx-10 lg:mx-0"

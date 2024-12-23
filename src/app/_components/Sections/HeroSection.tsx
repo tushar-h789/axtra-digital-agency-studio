@@ -203,11 +203,11 @@ export default function HeroSection() {
         {/* Icon and Banner Section */}
         <div className="relative flex items-center mt-5">
           {/* DownArrowIcon on the Left */}
-          <div className="flex items-center justify-center w-64 h-64">
+          <div className="flex items-center justify-center lg:w-64 lg:h-64">
             <motion.div
               variants={arrowVariants}
               animate="move"
-              className="border-2 py-8 rounded-full w-10 flex items-center justify-center"
+              className="border-2 py-3 lg:py-8 rounded-full w-10 flex items-center justify-center"
             >
               <DownArrowIcon />
             </motion.div>
