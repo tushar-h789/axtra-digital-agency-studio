@@ -71,3 +71,10 @@ a, button, .cursor-pointer {
   height: 80px;
   opacity: 0.8;
 }
+
+.bg-custom {
+  background-image: url('/axtra/banner-bg.png'); /* Replace with your static path */
+  background-position: right 50px top 250px;
+  background-size: 150px 300px;
+  background-repeat: no-repeat;
+}

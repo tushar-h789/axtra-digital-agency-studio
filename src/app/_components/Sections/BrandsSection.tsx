@@ -36,22 +36,23 @@ export default function BrandsSection() {
 
   // Intersection Observer to detect when the section is in view
   useEffect(() => {
+    const section = sectionRef.current; // Store the current value of ref
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsInView(true);
         }
       },
-      { threshold: 0.5 } // Trigger when 30% of the section is in view
+      { threshold: 0.5 } // Trigger when 50% of the section is in view
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (section) {
+      observer.observe(section);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (section) {
+        observer.unobserve(section); // Use the locally stored ref value
       }
     };
   }, []);
