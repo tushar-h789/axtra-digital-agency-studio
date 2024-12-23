@@ -91,6 +91,26 @@ export default function MarketingAgencySection() {
     };
   }, []);
 
+  // Animation variants for the main heading parts
+  const headingVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  // Animation variants for paragraph spans
+  const paragraphVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.2,
+        duration: 0.8
+      }
+    })
+  };
+
+
   return (
     <section ref={sectionRef} className="bg-black bg-custom p-8">
       <div className="container grid grid-cols-1 lg:grid-cols-2  lg:py-60 bg-black">
@@ -109,20 +129,25 @@ export default function MarketingAgencySection() {
           <div className="text-slate-200 relative">
             <hr className="animated-line absolute left-36 -top-[272px] h-64 lg:border border-gray-900" />
             <div className="uppercase lg:w-4/5 mt-16">
-              <div className="relative z-10">
+            <div className="relative z-10">
                 <motion.h2
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
+                  variants={headingVariants}
+                  transition={{ duration: 0.8 }}
                   className="text-xl"
                 >
                   Who We Are
                 </motion.h2>
-                <h2 className="lg:text-5xl text-2xl my-3 font-semibold">
+
+                <h2 className="text-5xl my-3 font-medium">
                   <motion.span
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
+                    variants={headingVariants}
+                    transition={{ duration: 0.8, delay: 0.3 }}
                     className="inline-block mr-2"
                   >
                     We are leading
@@ -131,6 +156,8 @@ export default function MarketingAgencySection() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
+                    variants={headingVariants}
+                    transition={{ duration: 0.8, delay: 0.6 }}
                     className="inline-block mr-2"
                   >
                     digital marketing
@@ -139,12 +166,14 @@ export default function MarketingAgencySection() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="inline-block mr-10 lg:mr-0"
+                    variants={headingVariants}
+                    transition={{ duration: 0.8, delay: 0.9 }}
+                    className="inline-block"
                   >
                     agency.
                   </motion.span>
                 </h2>
-                <hr className="animated-line absolute left-36 top-52 lg:h-[735px] lg:border border-gray-900" />
+                <hr className="animated-line absolute left-36 top-52 lg:h-[692px] lg:border border-gray-900" />
               </div>
             </div>
             {/* bg black not found */}
@@ -158,9 +187,17 @@ export default function MarketingAgencySection() {
                   "insights with design, and data to produce brand",
                   "experiences that customers love.",
                 ].map((text, index) => (
-                  <motion.span key={index} className="inline-block mr-1">
-                    {text}{" "}
-                  </motion.span>
+                    <motion.span
+                      key={index}
+                      custom={index + 4} // Start after the heading animations
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      variants={paragraphVariants}
+                      className="inline-block mr-1"
+                    >
+                      {text}{' '}
+                    </motion.span>
                 ))}
               </p>
               <div className="mt-6 lg:mt-20">
