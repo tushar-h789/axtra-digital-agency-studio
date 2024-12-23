@@ -112,8 +112,8 @@ export default function MarketingAgencySection() {
 
 
   return (
-    <section ref={sectionRef} className="bg-black bg-custom p-8">
-      <div className="container grid grid-cols-1 lg:grid-cols-2  lg:py-60 bg-black">
+    <section ref={sectionRef} className="bg-black bg-custom p-8 z-10">
+      <div className="container grid grid-cols-1 lg:grid-cols-2  lg:py-60">
         {/* Image with animation */}
         <div ref={imageRef} className="relative">
           <Image
@@ -177,7 +177,7 @@ export default function MarketingAgencySection() {
               </div>
             </div>
             {/* bg black not found */}
-            <div className="absolute lg:mx-0 w-full lg:w-2/3 lg:right-10 top-64">
+            <div className="absolute lg:mx-0 w-full lg:w-2/3 lg:right-10 top-[410px] lg:top-64">
               <p className="text-gray-500">
                 {[
                   "We're a team of strategic digital marketing",
