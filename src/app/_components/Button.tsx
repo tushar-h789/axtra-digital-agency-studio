@@ -4,7 +4,17 @@ import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import UpArrowIcon from "./Icons/up-arrow-icon";
 
-export default function Button() {
+interface ButtonProps {
+  title: string;
+  hoverTextColor?: string; // Optional prop for custom hover color
+  hoverBackgroundColor?: string; // Custom hover background color
+}
+
+export default function Button({
+  title,
+  hoverTextColor: hoverColor = "#ffff",
+  hoverBackgroundColor = "#ffffff",
+}: ButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0.5, y: 0.5 });
 
@@ -36,16 +46,16 @@ export default function Button() {
           className="relative z-10 transition-colors duration-300"
           variants={{
             rest: { color: "#94A3B8" }, // text-slate-400
-            hover: { color: "#000000" }, // text-black
+            hover: { color: hoverColor }, // Dynamic hover color
           }}
         >
-          Explore Us
+          {title}
         </motion.span>
         <motion.div
           className="relative z-10 transition-colors duration-300"
           variants={{
             rest: { color: "#94A3B8" }, // text-slate-400
-            hover: { color: "#000000" }, // text-black
+            hover: { color: hoverColor }, // Dynamic hover color
           }}
         >
           <UpArrowIcon className="w-6" />
@@ -53,8 +63,8 @@ export default function Button() {
 
         {/* Background Animation */}
         <motion.div
-          className="absolute inset-0 bg-white rounded-full"
-          initial={{ scale: 0 }}
+          className="absolute inset-0 rounded-full"
+          initial={{ scale: 0, backgroundColor: hoverBackgroundColor }}
           variants={{
             rest: { scale: 0 },
             hover: {
@@ -66,7 +76,9 @@ export default function Button() {
             },
           }}
           style={{
-            transformOrigin: `${mousePosition.x * 100}% ${mousePosition.y * 100}%`,
+            transformOrigin: `${mousePosition.x * 100}% ${
+              mousePosition.y * 100
+            }%`,
           }}
         />
       </motion.button>

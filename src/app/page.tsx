@@ -6,12 +6,12 @@ import Services from "./_components/Sections/Services";
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Navbar/>
       <HeroSection/>
       <BrandsSection/>
       <MarketingAgencySection/>
-      {/* <Services/> */}
+      <Services/>
     </div>
   );
 }
