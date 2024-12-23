@@ -30,7 +30,7 @@ export default function Services() {
   return (
     <section className="container mb-10">
       <div>
-        <div className="w-full text-slate-800 relative lg:ml-64 mt-[430px] lg:mt-0 mx-4 lg:mx-0">
+        <div className="w-full text-slate-800 relative lg:ml-64 mt-[450px] lg:mt-0 mx-4 lg:mx-0">
           <hr className="animated-line absolute left-36 -top-[288px] h-60 lg:border border-gray-100" />
           <div className="uppercase mt-72">
             <div className="relative">

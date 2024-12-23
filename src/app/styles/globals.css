@@ -32,8 +32,8 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   background-color: blueviolet;
   border-radius: 50%;
   pointer-events: none;
@@ -47,7 +47,7 @@ html {
   left: 0;
   width: 40px;
   height: 40px;
-  border: 1px solid blueviolet;
+  border: 1.5px solid blueviolet;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
@@ -78,4 +78,16 @@ a, button, .cursor-pointer {
   background-size: 150px 300px;
   background-repeat: no-repeat;
   z-index: 100;
+}
+
+/* slider */
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }
