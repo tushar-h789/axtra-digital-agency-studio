@@ -76,7 +76,8 @@ export default function Navbar() {
   };
 
   return (
-    <div className="mx-4 lg:mx-10 flex justify-between items-center py-6">
+    <div className="w-full  py-6 fixed bg-white z-20">
+      <div className=" flex justify-between items-center mx-10">
       <div className="flex-shrink-0">
         <Image src={logo} width={135} height={100} alt="logo" />
       </div>
@@ -186,6 +187,7 @@ export default function Navbar() {
           </ul>
         </div>
       )}
+      </div>
     </div>
   );
 }
