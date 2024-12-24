@@ -1,4 +1,5 @@
 import BrandsSection from "./_components/Sections/BrandsSection";
+import CommentsSection from "./_components/Sections/CommentsSection";
 import FeaturedSection from "./_components/Sections/FeaturedSection";
 import HeroSection from "./_components/Sections/HeroSection";
 import MarketingAgencySection from "./_components/Sections/MarketingAgencySection";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <MarketingAgencySection/>
       <Services/>
       <FeaturedSection/>
+      <CommentsSection/>
     </div>
   );
 }
