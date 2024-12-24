@@ -1,4 +1,4 @@
-
+import BlogSection from "./_components/Sections/BlogSection";
 import BrandsSection from "./_components/Sections/BrandsSection";
 import WhyChooseUsIndex from "./_components/Sections/ChooseUs/WhyChooseUsIndex";
 import CommentsSection from "./_components/Sections/CommentsSection";
@@ -11,19 +11,17 @@ import Services from "./_components/Sections/Services";
 
 export default function HomePage() {
   return (
-    <div>
-
     <div className="overflow-hidden">
-      <Navbar/>
-      <HeroSection/>
-      <BrandsSection/>
-      <MarketingAgencySection/>
-      <Services/>
-      <FeaturedSection/>
-      <CommentsSection/>
-    </div>
-      <WhyChooseUsIndex/>
-      <PricingSection/>
+      <Navbar />
+      <HeroSection />
+      <BrandsSection />
+      <MarketingAgencySection />
+      <Services />
+      <FeaturedSection />
+      <CommentsSection />
+      <WhyChooseUsIndex />
+      <PricingSection />
+      <BlogSection />
     </div>
   );
 }
