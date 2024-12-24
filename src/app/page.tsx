@@ -6,6 +6,7 @@ import FeaturedSection from "./_components/Sections/FeaturedSection";
 import HeroSection from "./_components/Sections/HeroSection";
 import MarketingAgencySection from "./_components/Sections/MarketingAgencySection";
 import Navbar from "./_components/Sections/Navbar";
+import PricingSection from "./_components/Sections/PricingSection";
 import Services from "./_components/Sections/Services";
 
 export default function HomePage() {
@@ -22,6 +23,7 @@ export default function HomePage() {
       <CommentsSection/>
     </div>
       <WhyChooseUsIndex/>
+      <PricingSection/>
     </div>
   );
 }

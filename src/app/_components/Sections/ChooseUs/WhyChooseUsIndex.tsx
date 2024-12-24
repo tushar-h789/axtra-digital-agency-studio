@@ -28,7 +28,7 @@ const WhyChooseUsIndex: FC = () => {
         trigger: container,
         pin: true,
         start: "top top",
-        end: "+=500%", // Increased to accommodate final scroll
+        end: () => `+=${sectionsRef.current.length * 100}%`, // Adjust dynamically
         scrub: 4,
         anticipatePin: 1,
       },
@@ -36,7 +36,7 @@ const WhyChooseUsIndex: FC = () => {
 
     sectionsRef.current.forEach((section, index) => {
       if (index === 0) return;
-      
+
       tl.to(section, {
         xPercent: 0,
         duration: 10,
@@ -52,20 +52,13 @@ const WhyChooseUsIndex: FC = () => {
       );
     });
 
-    // Add final scroll for last section
-    tl.to(sectionsRef.current[sectionsRef.current.length - 1], {
-      yPercent: -100,
-      duration: 10,
-      ease: "none",
-    });
-
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
   return (
-    <section ref={containerRef} className="bg-[#f6f6f5] w-full h-[600vh]"> {/* Increased height */}
+    <section ref={containerRef} className="relative bg-[#f6f6f5] w-full h-screen"> {/* Dynamic height */}
       <div className="sticky top-0 h-screen overflow-hidden">
         {[WhyChooseUs, ChooseUsReason, ChooseUsInformation, GoTogether].map(
           (Component, index) => (
@@ -74,7 +67,7 @@ const WhyChooseUsIndex: FC = () => {
               ref={(el) => {
                 sectionsRef.current[index] = el;
               }}
-              className="absolute w-full h-full"
+              className="absolute w-full h-screen" // Each section has full screen height
             >
               <Component />
             </div>
