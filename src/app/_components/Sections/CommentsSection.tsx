@@ -51,7 +51,7 @@ export default function CommentsSection() {
         <div className="relative">
           {/* Top Images */}
           <div className="flex justify-evenly">
-            <div className="relative w-[200px] h-[200px]">
+            <div className="relative w-[200px] h-[200px] hidden md:block">
               <Image
                 src={upCommentImageLeft}
                 alt="Comments Image Left side"
@@ -59,7 +59,7 @@ export default function CommentsSection() {
                 className="object-cover"
               />
             </div>
-            <div className="relative w-[100px] h-[100px] mt-20">
+            <div className="relative w-[100px] h-[100px] mt-20 hidden md:block">
               <Image
                 src={upCommentImageRight}
                 alt="Comments Image Right side"
@@ -71,7 +71,7 @@ export default function CommentsSection() {
 
           {/* Middle Images */}
           <div className="w-full absolute top-80 flex justify-between gap-8">
-            <div className="relative w-[100px] h-[100px]">
+            <div className="relative w-[100px] h-[100px] hidden md:block">
               <Image
                 src={middleCommentImageLeft}
                 alt="Comments Image Left side"
@@ -79,7 +79,7 @@ export default function CommentsSection() {
                 className="object-cover"
               />
             </div>
-            <div className="relative w-[200px] h-[200px] mt-14">
+            <div className="relative w-[200px] h-[200px] mt-14 hidden md:block">
               <Image
                 src={middleCommentImageRight}
                 alt="Comments Image Right side"
@@ -90,7 +90,7 @@ export default function CommentsSection() {
           </div>
 
           {/* Carousel Section */}
-          <div className="w-[580px] mx-auto">
+          <div className="md:w-[580px] mx-auto">
             <div className="text-center mx-auto">
               <DoubleQuotationUpIcon className="w-14 mx-auto mb-7 text-slate-800" />
             </div>
@@ -117,7 +117,7 @@ export default function CommentsSection() {
                 </div>
               </div>
 
-              <div className="flex justify-center gap-10 mt-10 w-[580px] mx-auto">
+              <div className="flex justify-center gap-10 mt-10 md:w-[580px] w-full mx-auto z-10">
                 <button
                   onClick={scrollPrev}
                   className="bg-white rounded-full hover:bg-gray-950 transition border border-slate-800 text-slate-800 hover:text-slate-200 flex items-center justify-center w-14 h-14"
@@ -136,7 +136,7 @@ export default function CommentsSection() {
 
           {/* Bottom Images */}
           <div className="flex justify-between -mt-56">
-            <div className="relative w-[200px] h-[384px]">
+            <div className="relative w-[200px] h-[384px] hidden md:block">
               <Image
                 src={bottomCommentImageLeft}
                 alt="Comments Image Left side"
@@ -144,7 +144,7 @@ export default function CommentsSection() {
                 className="object-cover"
               />
             </div>
-            <div className="relative w-[150px] h-[150px] mt-10 z-10 mr-28">
+            <div className="relative w-[150px] h-[150px] mt-10 z-10 mr-28 hidden md:block">
               <Image
                 src={bottomCommentImageRight}
                 alt="Comments Image Right side"
